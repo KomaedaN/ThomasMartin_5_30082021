@@ -41,6 +41,9 @@
 .ours__padding0 {
   padding-right: 0 !important;
 }
+.ours__remove {
+  display: flex;
+}
 
 .header__border {
   border-bottom: 0.1rem solid;
