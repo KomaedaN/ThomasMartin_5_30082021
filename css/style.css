@@ -1,4 +1,66 @@
 @charset "UTF-8";
+.ours__flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ours__borderL {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.ours__borderR {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.ours__relative {
+  position: relative;
+}
+.ours__relative:hover {
+  transform: scale(1.05);
+}
+.ours__center {
+  text-align: center;
+}
+.ours__text {
+  margin-bottom: 0;
+}
+.ours__HW {
+  max-width: 20rem;
+  max-height: 15rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ours__link-deco-none {
+  text-decoration: none;
+  color: black;
+}
+.ours__star {
+  color: orange;
+}
+.ours__padding0 {
+  padding-right: 0 !important;
+}
+
+.header__border {
+  border-bottom: 0.1rem solid;
+}
+
+#nav-cart-count {
+  color: black;
+  display: flex;
+}
+
+.navbar-brand {
+  display: flex;
+}
+
+.panier {
+  color: black;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
 /*!
  * Bootstrap v5.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
