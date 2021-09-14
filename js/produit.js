@@ -7,7 +7,6 @@ function afficherOurs(produit) {
     template.getElementById("nameProduitOurs").textContent = produit.name
     template.getElementById("descriptionProduitOurs").textContent = produit.description
     template.getElementById("priceProduitOurs").textContent = `${produit.price / 100}€`
-    template.getElementById("produitPage").href = `./produit.html?id=${produit._id}`
 
     document.getElementById("listProduit").appendChild(template)
 }
