@@ -11,19 +11,25 @@ function afficherOurs(produit) {
     document.getElementById("listProduit").appendChild(template)
 }
 
-async function getListOurs () {
-    return fetch("http://localhost:3000/api/teddies")
-        .then((httpBodyResponse) => httpBodyResponse.json())
-        .then((produits) => {
-            produits.forEach((produit) => {
-                afficherOurs(produit)
-            })
-        })
-        .catch((error) => {
-            alert("erreur")
-        })
-}
+function getproduitId() {
+    return new URL(window.location.href).searchParams.get('id')
+  }
+
+
+  
+function getproduitData(produitId) {
+    return fetch(`http://localhost:3000/api/teddies/${produitId}`)
+      .catch((error) => {
+        console.log(error)
+      })
+      .then((httpBodyResponse) => httpBodyResponse.json())
+      .then((produitData) => produitData)
+  }
+
 
 ;(async () => {
-    getListOurs()
+    const produitId = getproduitId()
+    const produitData = await getproduitData(produitId)
+  afficherOurs(produitData)
 })()
+

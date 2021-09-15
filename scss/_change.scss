@@ -21,9 +21,6 @@
     &__center{
         text-align: center;
     }
-    &__text{
-        margin-bottom: 0;
-    }
     &__HW{
         max-width: 20rem;
         max-height: 15rem;
@@ -44,4 +41,12 @@
     &__remove{
         display: flex;
     }
+}
+
+.panier{
+    color: #20446f;
+}
+.btn-secondary:hover{
+    background-color: rgb(3, 39, 3) !important;
+    color: #20446f !important;
 }

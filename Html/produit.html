@@ -25,11 +25,11 @@
                     
                     <a href="./panier.html" class="navbar-brand">
                         <div id="nav-cart-count">
-                            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                            <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-0 nav-progressive-attribute nav-progressive-content">0</span>
+                            <span><i class="fas fa-shopping-basket    panier"></i></span>
+                            <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-0 nav-progressive-attribute nav-progressive-content text-warning">0</span>
                         </div>
                         <div>
-                            <p class="panier">panier</p>
+                            <p class="ms-2 text-warning">panier</p>
                         </div>
                     </a>
                 </nav>            
@@ -52,18 +52,22 @@
 
     </div>
 
-    <template id="oursCard" class="row mb-3 ours__relative">
-        <div class="ours__remove mt-3 ours__relative">
+    <template id="oursCard" class="row mb-3">
+        <div class="ours__remove mt-3">
             <div class="col-5 border bg-light ours__center shadow ours__borderL" >
                 <img id="imageProduitOurs" alt="teddy" class="ours__HW" width="100">
             </div>
 
-            <div class="col-6 border bg-light text-dark ours__center shadow ours__borderR ours__flex">
+            <div class="col-7 border bg-light text-dark shadow ours__borderR ours__flex">
                 <div class="block-ours">
-                    <h2 id="nameProduitOurs" class="h2"></h2>
-                    <p id="descriptionProduitOurs"class="ours__text"></p>
+                    <h2 id="nameProduitOurs" class="h2 text-danger"></h2>
+                    <p id="priceProduitOurs"class="h2 mt-1 text-danger"></p>
+                    <div class="mt-4 h5 text-warning">couleur</div>
+                    <button class="btn btn-secondary btn-lg">J'achète</button>
+                    <h3 class="mt-5 h5 text-warning">Description</h3>
+                    <p id="descriptionProduitOurs" class="mt-1 me-6 text-warning" ></p>
                     <i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star-half-alt    ours__star"></i>
-                    <p id="priceProduitOurs"class=" mt-1"></p>
+                    
                 </div>
             </div> 
         </div>
