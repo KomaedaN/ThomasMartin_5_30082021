@@ -13,4 +13,13 @@ $spacers: (
   5: $spacer * 3,
   6: $spacer * 15,
   7: $spacer * 2, 
-)
+  8: $spacer * 26,
+);
+
+$position-values: (
+  0: 0,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+);
