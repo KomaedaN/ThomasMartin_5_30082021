@@ -47,6 +47,14 @@
     color: #20446f;
 }
 .btn-secondary:hover{
-    background-color: rgb(3, 39, 3) !important;
-    color: #20446f !important;
+    background-color: #aec6a1 !important;
+    color: black !important;
+}
+
+.compteur{
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    height: 2rem;
+    border-radius: 5rem;
+    color: white;
 }
