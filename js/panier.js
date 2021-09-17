@@ -1,10 +1,11 @@
 document
-    .getElementById("code-Validation")
-    .addEventListener("input", function(e) {
-        if (/^[A-Za-z]+$/.test(e.target.value)) {
-            document.getElementById(isValid).innerText = "Code Valide";
-            }
-        else{
-            document.getElementById(isValid).innerText = "Code invalide";
-        }
+  .getElementById("code") 
+  addEventListener("input", function(nameF) {
+  if (/^[A-Za-z]+$/.test(nameF.target.value)) {
+    document.getElementById("code-validation").innerText = "Prénom valide";
+    document.getElementById("code-validation").style.color = 'green'
+  } else {
+    document.getElementById("code-validation").innerText = "Prénom invalide";
+    document.getElementById("code-validation").style.color = '#e23427';
+  }
 });

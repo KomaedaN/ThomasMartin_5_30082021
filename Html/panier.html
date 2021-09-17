@@ -1,136 +1,140 @@
-<head>
-    
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
-    
-    <link rel="stylesheet" href="../css/style.css"/>
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+        
+        <link rel="stylesheet" href="../css/style.css"/>
 
-    <script src="https://kit.fontawesome.com/310f695db5.js" crossorigin="anonymous"></script>
-    <script src="../js/produit.js"></script>
-   
-    <title>Orinoco</title>
-</head>
+        <script src="https://kit.fontawesome.com/310f695db5.js" crossorigin="anonymous"></script>
+        <script src="../js/panier.js"></script>
+    
+        <title>Orinoco</title>
+    </head>
 
-<body>
-    <header>
-        <div class="bg-primary header__border">
-            <div class="container">
-                <div class="row">
-                    <nav class="navbar">
-                        <a href="index.html" class="navbar-brand">
-                            <img src="../images/logo.png" alt="Logo site" height="60">
-                        </a>
-                        
-                        <a href="./panier.html" class="navbar-brand">
-                            <div id="nav-cart-count" class="align-items-center">
-                                <span><i class="fas fa-shopping-basket    panier"></i></span>
-                                <span id="" aria-hidden="true" class="bg-dark compteur ms-2">0</span>
-                            </div>
-                            <div>
-                                <p class="ms-2 text-warning mb-0">panier</p>
-                            </div>
-                        </a>
-                    </nav>            
+    <body>
+
+        <header>
+            <div class="bg-primary header__border">
+                <div class="container">
+                    <div class="row">
+                        <nav class="navbar">
+                            <a href="index.html" class="navbar-brand">
+                                <img src="../js/images/logo.png" alt="Logo site" height="60">
+                            </a>
+                            
+                            <a href="./panier.html" class="navbar-brand">
+                                <div id="nav-cart-count" class="align-items-center">
+                                    <span><i class="fas fa-shopping-basket    panier"></i></span>
+                                    <span id="" aria-hidden="true" class="bg-dark compteur ms-2">0</span>
+                                </div>
+                                <div>
+                                    <p class="ms-2 text-warning mb-0">panier</p>
+                                </div>
+                            </a>
+                        </nav>            
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div class="container">
-        <div class="row">
-                <div class="col-12 col-md-6 pt-5">
-                    <h2>Paiement</h2>
-                    <form>
-                        <div class="row">
-                            <div class="form-group col-md-6">                          
-                                <label for="firstName">First name :</label>
-                                <input id="code-Validation" type="text" placeholder="First name" class="border-dark form-control" required>
-                                <div id="isValid"></div>
-                            </div>
+        <div class="container">
+            <div class="row">
+                    <div class="col-12 col-md-6 pt-5">
+                        <h2>Paiement</h2>
+                        <form id="form-to-check">
+                            <div class="row">
+                                <div class="form-group col-md-6">                          
+                                    <label for="firstName">Prénom :</label>
+                                    <input id="code" type="text" placeholder="Prénom" class="border-dark form-control" required>
+                                    <div id="code-validation"></div>
+                                </div>
 
-                            <div class="form-group col-md-6"> 
-                                <label for="lastName">Last name :</label> 
-                                <input type="text" placeholder="Last name" class="border-dark form-control">
-                            </div>
-                        </div>
-                    
-                        <div class="row mt-4">
-                            <div class="form-group col-md-6">
-                              <label for="inputEmail">Email</label>
-                              <input type="email" class="form-control border-dark" placeholder="Email" required>
-                            </div>
-
-                            <div class="form-group col-md-6">
-                              <label for="inputPassword">Password</label>
-                              <input type="password" class="form-control border-dark" placeholder="Password" required>
-                            </div>
-                        </div>
-
-                            <div class="form-group mt-4">
-                                <label for="inputAddress">Address</label>
-                                <input type="text" class="form-control border-dark" placeholder="1234 Main St" required>
+                                <div class="form-group col-md-6"> 
+                                    <label for="lastName">Nom :</label> 
+                                    <input type="text" placeholder="Nom" class="border-dark form-control">
+                                </div>
                             </div>
                         
+                            <div class="row mt-4">
+                                <div class="form-group col-md-6">
+                                <label for="inputEmail">Email :</label>
+                                <input type="email" class="form-control border-dark" placeholder="Email" required>
+                                </div>
 
-                        <div class="row mt-4">
-                            <div class="form-group col-md-6"> 
-                                <label for="codePostal">Code postal :</label> 
-                                <input type="text" placeholder="Last name" class="border-dark form-control">
-                            </div> 
-                        
-                            <div class="form-group col-md-6"> 
-                                <label for="ville">Ville :</label> 
-                                <input type="text" placeholder="Last name" class="border-dark form-control">
+                                <div class="form-group col-md-6">
+                                <label for="inputPassword">Password :</label>
+                                <input type="password" class="form-control border-dark" placeholder="Password" required>
+                                </div>
                             </div>
-                        </div>
 
-                        <button class="btn btn-warning mt-5" type="submit">Commander</button>
-                    </form>
-                </div>
-            
-            
+                                <div class="form-group mt-4">
+                                    <label for="inputAddress">Addresse :</label>
+                                    <input type="text" class="form-control border-dark" placeholder="1234 Main St" required>
+                                </div>
+                            
 
-                <div class="col-12 col-md-6 border-start border-dark bg-light pt-5">
-
-                        <div class=" d-inline-flex">
-                            <img src="../images/teddy_2.jpg" alt="teddy" class="w-25">
-                            <div class=" d-inline-flex w-100 justify-content-between">
-                            <div class="ms-2">    
-                                <h3 id="nameProduitOurs">testzdpozd</h3>
-                                <h3 class="h5 text-warning ">Couleur : <span id="couleurProduit"></span></h3>
-                                <button id="couleurProduit" class="p-2 ms-3"  disabled></button>
+                            <div class="row mt-4">
+                                <div class="form-group col-md-6"> 
+                                    <label for="codePostal">Code postal :</label> 
+                                    <input type="text" placeholder="Code postal" class="border-dark form-control">
+                                </div> 
+                            
+                                <div class="form-group col-md-6"> 
+                                    <label for="ville">Ville :</label> 
+                                    <input type="text" placeholder="Ville" class="border-dark form-control">
+                                </div>
                             </div>
-                            <h3 id="priceProduitOurs">3123</h3>   
-                            </div>
-                        </div>
-                        <hr class="mt-4">
-                        <div class=" d-inline-flex w-100 justify-content-between mt-5">
-                            <h3>Prix Total</h3>
-                            <h3>35</h3>
-                        </div>
-                    
-                </div>
+
+                            <button class="btn btn-warning mt-5 mb-5" type="submit">Commander</button>
+                        </form>
+                    </div>
                 
-            
+                
+
+                    <div class="col-12 col-md-6 border-start border-dark bg-light pt-5">
+
+                            <div class=" d-inline-flex">
+                                <img src="../js/images/teddy_1.jpg" alt="teddy" class="w-25">
+                                <div class=" d-inline-flex w-100 justify-content-between">
+                                <div class="ms-2">    
+                                    <h3 id="nameProduitOurs">testzdpozd</h3>
+                                    <h3 class="h5 text-warning ">Couleur : <span id="couleurProduit"></span></h3>
+                                    <button id="couleurProduit" class="p-2 ms-3"  disabled></button>
+                                </div>
+                                <h3 id="priceProduitOurs">3123</h3>   
+                                </div>
+                            </div>
+                            <hr class="mt-4">
+                            <div class=" d-inline-flex w-100 justify-content-between mt-5">
+                                <h3>Prix Total :</h3>
+                                <h3>35</h3>
+                            </div>
+                        
+                    </div>
+                    
+                
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col  bg-secondary pt-3 ours__padding0">
-            <ul class="list-inline text-center">
-                <li class="list-inline-item"><a href="#">À propos</a></li>
-                <li class="list-inline-item">&middot;</li>
-                <li class="list-inline-item"><a href="#">Vie privée</a></li>
-                <li class="list-inline-item">&middot;</li>
-                <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
-            </ul>
+        <div class="row">
+            <div class="col  bg-secondary pt-3 ours__padding0">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item"><a href="#">À propos</a></li>
+                    <li class="list-inline-item">&middot;</li>
+                    <li class="list-inline-item"><a href="#">Vie privée</a></li>
+                    <li class="list-inline-item">&middot;</li>
+                    <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
+                </ul>
+            </div>
+
         </div>
 
-    </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-</body>
+    </body>
+</html>

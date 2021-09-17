@@ -17,32 +17,29 @@
 
 <body>
 
-    <div class="bg-primary header__border">
-        <div class="container">
-            <div class="row">
-                <nav class="navbar">
-                    <a href="index.html" class="navbar-brand">
-                        <img src="../images/logo.png" alt="Logo site" height="60">
-                    </a>
-
-                    <div class="row">
-                        <div class="col">
-                            <input type="text" id="searchInput" placeholder="Search.." class="form-control">
-                        </div>
-                    </div>
-                    <a href="./panier.html" class="navbar-brand">
-                        <div id="nav-cart-count">
-                            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                            <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-0 nav-progressive-attribute nav-progressive-content">0</span>
-                        </div>
-                        <div>
-                            <p class="panier">panier</p>
-                        </div>
-                    </a>
-                </nav>            
+    <header>
+        <div class="bg-primary header__border">
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar">
+                        <a href="index.html" class="navbar-brand">
+                            <img src="../js/images/logo.png" alt="Logo site" height="60">
+                        </a>
+                        
+                        <a href="./panier.html" class="navbar-brand">
+                            <div id="nav-cart-count" class="align-items-center">
+                                <span><i class="fas fa-shopping-basket    panier"></i></span>
+                                <span id="" aria-hidden="true" class="bg-dark compteur ms-2">0</span>
+                            </div>
+                            <div>
+                                <p class="ms-2 text-warning mb-0">panier</p>
+                            </div>
+                        </a>
+                    </nav>            
+                </div>
             </div>
         </div>
-    </div>
+    </header>
 
         <div id="listProduit"class="container pt-4 pb-4">
                     
@@ -70,8 +67,8 @@
                         <img id="imageProduitOurs" alt="teddy1"  class="ours__HW">                  
                     </div>
 
-                    <div class="col-5 col-md-4 border bg-light text-dark ours__center shadow ours__border ours__flex">
-                            <div class="block-ours bg-primary">
+                    <div class="col-5 col-md-4 border text-dark ours__center shadow ours__border ours__flex  bg-primary">
+                            <div class="block-ours">
                                 <h2 id="nameProduitOurs" class="h2 text-danger"></h2>
                                 <p id="descriptionProduitOurs"class="ours__text"></p>
                                 <i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star-half-alt    ours__star"></i>

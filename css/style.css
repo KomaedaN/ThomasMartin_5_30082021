@@ -58,6 +58,10 @@
   color: white;
 }
 
+.objectif {
+  object-fit: cover;
+}
+
 .header__border {
   border-bottom: 0.1rem solid;
 }
