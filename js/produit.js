@@ -7,7 +7,9 @@ function afficherOurs(produit) {
     template.getElementById("nameProduitOurs").textContent = produit.name
     template.getElementById("descriptionProduitOurs").textContent = produit.description
     template.getElementById("priceProduitOurs").textContent = `${produit.price / 100}€`
-    template.getElementById("colorsProduitOurs").style = `${produit.colors}`
+    template.getElementById("oursId").textContent = produit._id
+    template.getElementById("btnOurs").onclick = `window.location=./panier.html?id=${produit._id}`
+
 
     document.getElementById("listProduit").appendChild(template)
 }
@@ -28,13 +30,22 @@ function getproduitData(produitId) {
   }
 
 
+// function addCart() {
+//   const id = getproduitId();
+//   const data = getproduitData(id);
+//   localStorage.setItem(id, JSON.stringify(data))
+//   console.log(localStorage)
+// }
+
+
+
+
+
+
 ;(async () => {
     const produitId = getproduitId()
     const produitData = await getproduitData(produitId)
   afficherOurs(produitData)
 })()
-
-
-
 
 
