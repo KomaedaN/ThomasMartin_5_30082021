@@ -7,6 +7,7 @@ function afficherOurs(produit) {
     template.getElementById("nameProduitOurs").textContent = produit.name
     template.getElementById("descriptionProduitOurs").textContent = produit.description
     template.getElementById("priceProduitOurs").textContent = `${produit.price / 100}€`
+    template.getElementById("colorsProduitOurs").style = `${produit.colors}`
 
     document.getElementById("listProduit").appendChild(template)
 }
@@ -32,4 +33,8 @@ function getproduitData(produitId) {
     const produitData = await getproduitData(produitId)
   afficherOurs(produitData)
 })()
+
+
+
+
 

@@ -62,6 +62,23 @@
   object-fit: cover;
 }
 
+input:invalid {
+  background-color: #ffdddd;
+}
+
+input:valid {
+  background-color: #ddffdd;
+}
+
+input:required {
+  border-color: #800000;
+  border-width: 3px;
+}
+
+input:required:valid {
+  border-color: #008000;
+}
+
 .header__border {
   border-bottom: 0.1rem solid;
 }
