@@ -8,10 +8,47 @@ function afficherOurs(produit) {
     template.getElementById("descriptionProduitOurs").textContent = produit.description
     template.getElementById("priceProduitOurs").textContent = `${produit.price / 100}€`
     template.getElementById("oursId").textContent = produit._id
-    template.getElementById("btnOurs").onclick = `window.location=./panier.html?id=${produit._id}`
+    //template.getElementById("btnOurs").onclick = `window.location=./panier.html?id=${produit._id}`
 
 
     document.getElementById("listProduit").appendChild(template)
+    
+    const envoyerPanier = document.querySelector("#btn-envoyer");
+
+//-------------------Ajouter au panier
+    envoyerPanier.addEventListener("click", (event) => {
+    console.log(event);
+    event.preventDefault();
+
+//------------------Récuperation des valeurs
+    let optionsProduit = {
+    idProduit:  document.querySelector("#oursId").textContent = produit._id,
+    imgProduit: document.querySelector("#imageProduitOurs").src = produit.imageUrl,
+    nameProduit: document.querySelector("#nameProduitOurs").textContent = produit.name,
+    priceProduit: document.querySelector("#priceProduitOurs").textContent = `${produit.price / 100}€`,
+    };
+  
+    console.log(optionsProduit);
+
+    //--------------------Local Storage 
+//Variable "saveProduitLocal" contenant les key et les valeurs qui sont dans le local storage
+let saveProduitLocal = JSON.parse(localStorage.getItem("produit"));
+console.log(saveProduitLocal);
+//s'il y'a déja des produits save dans le local storage 
+if (saveProduitLocal) {
+  saveProduitLocal.push(optionsProduit);
+  localStorage.setItem("produit", JSON.stringify(saveProduitLocal));
+  console.log(saveProduitLocal);
+} 
+//s'il n'y a pas de produit save dans le local storage
+else{
+  saveProduitLocal = [];
+  saveProduitLocal.push(optionsProduit);
+  
+  localStorage.setItem("produit", JSON.stringify(saveProduitLocal));
+  console.log(saveProduitLocal);
+}
+  });
 }
 
 function getproduitId() {
@@ -30,22 +67,18 @@ function getproduitData(produitId) {
   }
 
 
-// function addCart() {
-//   const id = getproduitId();
-//   const data = getproduitData(id);
-//   localStorage.setItem(id, JSON.stringify(data))
-//   console.log(localStorage)
-// }
-
-
-
-
-
 
 ;(async () => {
-    const produitId = getproduitId()
-    const produitData = await getproduitData(produitId)
-  afficherOurs(produitData)
+  const produitId = getproduitId()
+  const produitData = await getproduitData(produitId)
+afficherOurs(produitData)
 })()
+
+
+
+
+
+
+
 
 
