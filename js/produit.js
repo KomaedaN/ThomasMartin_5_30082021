@@ -32,23 +32,25 @@ function afficherOurs(produit) {
 
     //--------------------Local Storage 
 //Variable "saveProduitLocal" contenant les key et les valeurs qui sont dans le local storage
-let saveProduitLocal = JSON.parse(localStorage.getItem("produit"));
-console.log(saveProduitLocal);
+    let saveProduitLocal = JSON.parse(localStorage.getItem("produit"));
+    
+
+//Fonction ajouter le produit dans le localStorage 
+    const addProduitLocalStorage = () => {
+      saveProduitLocal.push(optionsProduit);
+      localStorage.setItem("produit", JSON.stringify(saveProduitLocal));
+    };
+
 //s'il y'a déja des produits save dans le local storage 
-if (saveProduitLocal) {
-  saveProduitLocal.push(optionsProduit);
-  localStorage.setItem("produit", JSON.stringify(saveProduitLocal));
-  console.log(saveProduitLocal);
-} 
+    if (saveProduitLocal) {
+      addProduitLocalStorage();
+    } 
 //s'il n'y a pas de produit save dans le local storage
-else{
-  saveProduitLocal = [];
-  saveProduitLocal.push(optionsProduit);
-  
-  localStorage.setItem("produit", JSON.stringify(saveProduitLocal));
-  console.log(saveProduitLocal);
-}
-  });
+    else{
+      saveProduitLocal = [];
+      addProduitLocalStorage();
+    }
+      });
 }
 
 function getproduitId() {
