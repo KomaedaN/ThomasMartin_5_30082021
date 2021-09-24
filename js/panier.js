@@ -28,21 +28,20 @@ if (saveProduitLocal === null){
 };
 
 
-
-
-    // function afficherOurs(produit) {
+//Variable des prix du panier
+let totalPriceCalcul = [];
+//récuperer les prix du panier
+for (let m = 0; m < saveProduitLocal.length; m++){
+    let priceArticlesDuPanier = saveProduitLocal[m].priceProduit;
     
-//     //template ID 
-//     const oursCard = document.getElementById("oursCard");
-//     //Copie Node
-//     const template = document.importNode(oursCard.content, true);
-//     //get all id api
-//     template.getElementById("imageProduitOurs").src = produit.imageUrl
-//     template.getElementById("nameProduit").textContent = produit.name
-//     template.getElementById("descriptionProduitOurs").textContent = produit.description
-//     template.getElementById("priceProduitOurs").textContent = `${produit.price / 100}€`
-//     template.getElementById("produitPage").href = `./produit.html?id=${produit._id}`
+//stocker les prix dans la variable "totalPriceCalcul"
+    totalPriceCalcul.push(priceArticlesDuPanier);
+    //console.log(totalPriceCalcul);
+    
+}
+//Additionner les prix du tableau "totalPriceCalcul"
 
-//     document.getElementById("listProduit").appendChild(template)
-// }
-
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+console.log(reducer);
+const totalPrice = totalPriceCalcul.reduce(reducer,0);
+console.log(totalPriceCalcul);
