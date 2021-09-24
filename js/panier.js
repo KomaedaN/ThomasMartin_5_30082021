@@ -20,7 +20,7 @@ if (saveProduitLocal === null){
         
         //attriber une ID à mes valeurs dans la key "produit"
         template.getElementById("nameProduit").textContent = saveProduitLocal[produit].nameProduit
-        template.getElementById("priceProduit").textContent = saveProduitLocal[produit].priceProduit
+        template.getElementById("priceProduit").textContent = saveProduitLocal[produit].priceProduit + "€"
         template.getElementById("imageProduit").src = saveProduitLocal[produit].imgProduit
         //créer autant de template que nécessaire (en fonction de nombre d'articles)
         document.getElementById("listProduit").appendChild(template)
@@ -39,9 +39,10 @@ for (let m = 0; m < saveProduitLocal.length; m++){
     //console.log(totalPriceCalcul);
     
 }
+let prixTotal = document.querySelector("#prixTotal");
 //Additionner les prix du tableau "totalPriceCalcul"
-
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 console.log(reducer);
 const totalPrice = totalPriceCalcul.reduce(reducer,0);
-console.log(totalPriceCalcul);
+console.log(totalPrice);
+prixTotal.innerText = `${totalPrice} €`
