@@ -7,7 +7,10 @@ const article = document.querySelector("#aucunArticle");
 if (saveProduitLocal === null){
     const panierVide =`
     <div>
-        <div>le panier est vide</div>
+        <div>
+        <h3>le panier est vide</h3>
+        <a href="index.html" class="h3 text-decoration-none text-warning">revenir au menu principal</a>
+        </div>
     </div>
     `; 
     article.innerHTML = panierVide;
@@ -46,3 +49,11 @@ console.log(reducer);
 const totalPrice = totalPriceCalcul.reduce(reducer,0);
 console.log(totalPrice);
 prixTotal.innerText = `${totalPrice} €`
+
+
+
+const btnReset = document.querySelector("#supprimerArticle");
+btnReset.addEventListener("click", () => {
+    localStorage.clear();
+    location.reload();
+});

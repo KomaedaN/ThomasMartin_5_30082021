@@ -21,7 +21,7 @@ function afficherOurs(produit) {
     event.preventDefault();
 
 
-})
+
 
 //------------------Récuperation des valeurs
 let optionsProduit = {
@@ -53,8 +53,8 @@ let optionsProduit = {
     saveProduitLocal = [];
     addProduitLocalStorage();
   }
-    };
-
+    });
+  }
 function getproduitId() {
     return new URL(window.location.href).searchParams.get('id')
   }
@@ -77,12 +77,3 @@ function getproduitData(produitId) {
   const produitData = await getproduitData(produitId)
 afficherOurs(produitData)
 })()
-
-
-
-
-
-
-
-
-
