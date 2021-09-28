@@ -8,7 +8,7 @@ function afficherOurs(produit) {
     template.getElementById("descriptionProduitOurs").textContent = produit.description
     template.getElementById("priceProduitOurs").textContent = produit.price / 100 + "€"
     template.getElementById("oursId").textContent = produit._id
-    //template.getElementById("btnOurs").onclick = `window.location=./panier.html?id=${produit._id}`
+    //template.getElementById("colorsSelector").appendChild(produit.colors)
     
         
     document.getElementById("listProduit").appendChild(template)
