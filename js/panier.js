@@ -1,3 +1,4 @@
+
 let saveProduitLocal = JSON.parse(localStorage.getItem("produit"));
     //console.log(saveProduitLocal);
 
@@ -9,7 +10,7 @@ if (saveProduitLocal === null){
     <div>
         <div>
         <h3>le panier est vide</h3>
-        <a href="index.html" class="h3 text-decoration-none text-warning">revenir au menu principal</a>
+        <a href="index.html" class="h3  text-warning">revenir au menu principal</a>
         </div>
     </div>
     `; 
@@ -51,9 +52,62 @@ console.log(totalPrice);
 prixTotal.innerText = `${totalPrice} €`
 
 
-
+//Supprimer le panier , supprimer le localStorage
 const btnReset = document.querySelector("#supprimerArticle");
 btnReset.addEventListener("click", () => {
     localStorage.clear();
     location.reload();
 });
+
+//envoyer les informations de l'utilisateur 
+function CheckFormThenSend(){
+    const form = document.querySelector("#form-to-check");
+    const submit = document.querySelector("#submit-btn");
+    let inputName = document.querySelector("#firstName");
+    let inputLastName = document.querySelector("#Name");
+    let inputCity = document.querySelector("#ville");
+    let inputMail = document.querySelector("#mail");
+    let inputAddress = document.querySelector("#address");
+console.log("e");
+    if (
+        !inputName.value ||
+        !inputLastName.value ||
+        !inputCity.value ||
+        !inputMail.value ||
+        !inputAddress.value
+    ){
+        document.querySelector("#erreur").innerText = "Veuillez remplir les champs"
+    } else {
+        const order = {
+            contact: {
+                firstName: inputName.value,
+                lastName: inputLastName.value,
+                city: inputCity.value,
+                email: inputMail.value,
+                address: inputAddress.value
+            },
+            products: JSON.stringify(saveProduitLocal),
+        };
+    //send Json method ...
+        const sendJson = {
+            method: "POST",
+            headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+            body: JSON.stringify(order),
+        };
+
+
+        fetch("http://localhost:3000/api/teddies/order", sendJson)
+            .then((reponse) => reponse.json())
+            .then((data) => {
+                //const total = document.querySelector("#prixTotal");
+                localStorage.clear();
+                localStorage.setItem("orderID", data.orderId);
+                localStorage.setItem("prixTotal", total);
+            })
+            .catch((err) =>
+            {
+                alert(err);
+            })
+        }
+    }
+
