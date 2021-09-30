@@ -2,6 +2,7 @@
 let saveProduitLocal = JSON.parse(localStorage.getItem("produit"));
     //console.log(saveProduitLocal);
 
+
 const article = document.querySelector("#aucunArticle");
 
 // afficher "panier vide" si il est vide

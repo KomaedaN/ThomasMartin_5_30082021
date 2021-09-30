@@ -3,19 +3,21 @@ function afficherOurs(produit) {
 
     const template = document.importNode(oursCard.content, true);
 
+    
     template.getElementById("imageProduitOurs").src = produit.imageUrl
     template.getElementById("nameProduitOurs").textContent = produit.name
     template.getElementById("descriptionProduitOurs").textContent = produit.description
     template.getElementById("priceProduitOurs").textContent = produit.price / 100 + "€"
     template.getElementById("oursId").textContent = produit._id
-    //template.getElementById("colorsSelector").appendChild(produit.colors)
+    template.getElementById("colorsSelector").style = produit.colors
+    //console.log(produit.colors);
     
-        
+
     document.getElementById("listProduit").appendChild(template)
     
     const envoyerPanier = document.querySelector("#btn-envoyer");
 
-//-------------------Ajouter au panier
+//Ajouter au panier
     envoyerPanier.addEventListener("click", (event) => {
     console.log(event);
     event.preventDefault();
@@ -23,7 +25,7 @@ function afficherOurs(produit) {
 
 
 
-//------------------Récuperation des valeurs
+//Récuperation des valeurs
 let optionsProduit = {
   idProduit:  textContent = produit._id,
   imgProduit: src = produit.imageUrl,
@@ -33,7 +35,7 @@ let optionsProduit = {
 
   console.log(optionsProduit);
 
-  //--------------------Local Storage 
+  //Local Storage 
 //Variable "saveProduitLocal" contenant les key et les valeurs qui sont dans le local storage
   let saveProduitLocal = JSON.parse(localStorage.getItem("produit"));
   
@@ -54,6 +56,18 @@ let optionsProduit = {
     addProduitLocalStorage();
   }
     });
+  const colors = document.querySelector("#colorsSelector");
+  produit.colors.forEach((color) => {
+    //dupliquer "colorsSelector" pour chaque couleur 
+    const templateColors = document.getElementById("colorsSelector")
+    const duplicateColors = document.importNode(templateColors.content, true)
+  
+    //ajouter la couleur au background 
+    duplicateColors.querySelector("div").style.backgroundColor = color
+  
+    //dupliquer "colors" pour chaque couleur 
+    colors.appendChild(duplicateColors)
+    })
   }
 function getproduitId() {
     return new URL(window.location.href).searchParams.get('id')

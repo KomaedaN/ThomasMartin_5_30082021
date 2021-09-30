@@ -79,6 +79,11 @@ input:required:valid {
   border-color: #008000;
 }
 
+.color:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
 .header__border {
   border-bottom: 0.1rem solid;
 }

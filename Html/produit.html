@@ -66,10 +66,14 @@
                 <div class="block-ours container pt-4 pb-4">
                     <h2 id="nameProduitOurs" class="h2 text-danger"></h2>
                     <p id="priceProduitOurs" class="h2 mt-1 text-danger"></p>
-                    <div class="mt-4 mb-5">
-                        <h3 class="h5 text-warning ">Couleur : </h3>
-                        <select class="custom-select" id="colorsSelector"></select>
-                    </div>
+                    
+                        <h3 class="h5 text-warning">Couleur : </h3>
+                        <template id="colorsSelector" class="row col-1 mb-3 ms-1 flex-nowrap">
+                            <div class="me-4 border border-warning rounded-3 color">
+                                <p class="mb-0 opacity-0">o</p>
+                            </div>
+                        </template>
+                    
                     <button id="btn-envoyer" type="submit" name="btn-envoyer" class="btn btn-secondary btn-lg">J'achète</button>
                     <h3 class="mt-5 h5 text-warning">Description</h3>
                     <p id="descriptionProduitOurs" class="mt-1 me-lg-6 text-warning" ></p>

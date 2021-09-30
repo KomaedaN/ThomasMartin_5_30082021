@@ -79,3 +79,8 @@ input:invalid {
   input:required:valid {
     border-color: #008000;
   }
+
+.color:hover{
+    cursor: pointer;
+    transform: scale(1.3);
+}
