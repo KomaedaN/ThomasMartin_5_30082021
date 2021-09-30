@@ -1,93 +1,93 @@
 function afficherOurs(produit) {
-    const oursCard = document.getElementById("oursCard");
+  const oursCard = document.getElementById("oursCard");
 
-    const template = document.importNode(oursCard.content, true);
+  const template = document.importNode(oursCard.content, true);
 
-    
-    template.getElementById("imageProduitOurs").src = produit.imageUrl
-    template.getElementById("nameProduitOurs").textContent = produit.name
-    template.getElementById("descriptionProduitOurs").textContent = produit.description
-    template.getElementById("priceProduitOurs").textContent = produit.price / 100 + "€"
-    template.getElementById("oursId").textContent = produit._id
-    template.getElementById("colorsSelector").style = produit.colors
-    //console.log(produit.colors);
-    
+  
+  template.getElementById("imageProduitOurs").src = produit.imageUrl
+  template.getElementById("nameProduitOurs").textContent = produit.name
+  template.getElementById("descriptionProduitOurs").textContent = produit.description
+  template.getElementById("priceProduitOurs").textContent = produit.price / 100 + "€"
+  template.getElementById("oursId").textContent = produit._id
+  template.getElementById("colorsSelector").style = produit.colors
+  //console.log(produit.colors);
+  
 
-    document.getElementById("listProduit").appendChild(template)
-    
-    const envoyerPanier = document.querySelector("#btn-envoyer");
+  document.getElementById("listProduit").appendChild(template)
+  
+  const envoyerPanier = document.querySelector("#btn-envoyer");
 
 //Ajouter au panier
-    envoyerPanier.addEventListener("click", (event) => {
-    console.log(event);
-    event.preventDefault();
+  envoyerPanier.addEventListener("click", (event) => {
+  console.log(event);
+  event.preventDefault();
 
 
 
 
 //Récuperation des valeurs
 let optionsProduit = {
-  idProduit:  textContent = produit._id,
-  imgProduit: src = produit.imageUrl,
-  nameProduit: textContent = produit.name,
-  priceProduit: textContent = produit.price / 100,
-  };
+idProduit:  textContent = produit._id,
+imgProduit: src = produit.imageUrl,
+nameProduit: textContent = produit.name,
+priceProduit: textContent = produit.price / 100,
+};
 
-  console.log(optionsProduit);
+console.log(optionsProduit);
 
-  //Local Storage 
+//Local Storage 
 //Variable "saveProduitLocal" contenant les key et les valeurs qui sont dans le local storage
-  let saveProduitLocal = JSON.parse(localStorage.getItem("produit"));
-  
+let saveProduitLocal = JSON.parse(localStorage.getItem("produit"));
+
 
 //Fonction ajouter le produit dans le localStorage 
-  const addProduitLocalStorage = () => {
-    saveProduitLocal.push(optionsProduit);
-    localStorage.setItem("produit", JSON.stringify(saveProduitLocal));
-  };
+const addProduitLocalStorage = () => {
+  saveProduitLocal.push(optionsProduit);
+  localStorage.setItem("produit", JSON.stringify(saveProduitLocal));
+};
 
 //s'il y'a déja des produits save dans le local storage 
-  if (saveProduitLocal) {
-    addProduitLocalStorage();
-  } 
+if (saveProduitLocal) {
+  addProduitLocalStorage();
+} 
 //s'il n'y a pas de produit save dans le local storage
-  else{
-    saveProduitLocal = [];
-    addProduitLocalStorage();
-  }
-    });
-  const colors = document.querySelector("#colorsSelector");
-  produit.colors.forEach((color) => {
-    //dupliquer "colorsSelector" pour chaque couleur 
-    const templateColors = document.getElementById("colorsSelector")
-    const duplicateColors = document.importNode(templateColors.content, true)
-  
-    //ajouter la couleur au background 
-    duplicateColors.querySelector("div").style.backgroundColor = color
-  
-    //dupliquer "colors" pour chaque couleur 
-    colors.appendChild(duplicateColors)
-    })
-  }
+else{
+  saveProduitLocal = [];
+  addProduitLocalStorage();
+}
+  });
+const colors = document.querySelector("#colorsSelector");
+produit.colors.forEach((color) => {
+  //dupliquer "colorsSelector" pour chaque couleur 
+  const templateColors = document.getElementById("colorsSelector")
+  const duplicateColors = document.importNode(templateColors.content, true)
+
+  //ajouter la couleur au background 
+  duplicateColors.querySelector("div").style.backgroundColor = color
+
+  //dupliquer "colors" pour chaque couleur 
+  colors.appendChild(duplicateColors)
+  })
+}
 function getproduitId() {
-    return new URL(window.location.href).searchParams.get('id')
-  }
+  return new URL(window.location.href).searchParams.get('id')
+}
 
 
-  
+
 function getproduitData(produitId) {
-    return fetch(`http://localhost:3000/api/teddies/${produitId}`)
-      .catch((error) => {
-        console.log(error)
-      })
-      .then((httpBodyResponse) => httpBodyResponse.json())
-      .then((produitData) => produitData)
-  }
+  return fetch(`http://localhost:3000/api/teddies/${produitId}`)
+    .catch((error) => {
+      console.log(error)
+    })
+    .then((httpBodyResponse) => httpBodyResponse.json())
+    .then((produitData) => produitData)
+}
 
 
 
 ;(async () => {
-  const produitId = getproduitId()
-  const produitData = await getproduitData(produitId)
+const produitId = getproduitId()
+const produitData = await getproduitData(produitId)
 afficherOurs(produitData)
 })()

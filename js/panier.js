@@ -3,6 +3,7 @@ let saveProduitLocal = JSON.parse(localStorage.getItem("produit"));
     //console.log(saveProduitLocal);
 
 
+
 const article = document.querySelector("#aucunArticle");
 
 // afficher "panier vide" si il est vide
@@ -22,6 +23,7 @@ if (saveProduitLocal === null){
     for (let produit in saveProduitLocal) {
         const oursCard = document.getElementById("oursCard");
         const template = document.importNode(oursCard.content, true);
+       
         
         //attriber une ID à mes valeurs dans la key "produit"
         template.getElementById("nameProduit").textContent = saveProduitLocal[produit].nameProduit
@@ -62,6 +64,7 @@ btnReset.addEventListener("click", () => {
 
 //envoyer les informations de l'utilisateur 
 function CheckFormThenSend(){
+    let idProd = saveProduitLocal.map(x => x.idProduit);
     const form = document.querySelector("#form-to-check");
     const submit = document.querySelector("#submit-btn");
     let inputName = document.querySelector("#firstName");
@@ -69,7 +72,8 @@ function CheckFormThenSend(){
     let inputCity = document.querySelector("#ville");
     let inputMail = document.querySelector("#mail");
     let inputAddress = document.querySelector("#address");
-console.log("e");
+    
+//console.log("e");
     if (
         !inputName.value ||
         !inputLastName.value ||
@@ -87,23 +91,24 @@ console.log("e");
                 email: inputMail.value,
                 address: inputAddress.value
             },
-            products: JSON.stringify(saveProduitLocal),
+            products: (idProd),
         };
     //send Json method ...
         const sendJson = {
             method: "POST",
-            headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+            headers: {'Content-Type': 'application/json; charset=utf-8'},
             body: JSON.stringify(order),
         };
 
 
-        fetch("http://localhost:3000/api/teddies/order", sendJson)
-            .then((reponse) => reponse.json())
+        fetch("http://localhost:3000/api/teddies/order", sendJson) 
+            .then((reponse) =>  reponse.json())
             .then((data) => {
-                //const total = document.querySelector("#prixTotal");
                 localStorage.clear();
+                const total = document.querySelector("#prixTotal");
+                
                 localStorage.setItem("orderID", data.orderId);
-                localStorage.setItem("prixTotal", total);
+                localStorage.setItem("prixTotal", totalPrice);
             })
             .catch((err) =>
             {
