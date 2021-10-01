@@ -44,12 +44,12 @@
                                 <!--Prénom-->
                                 <div class="form-group col-md-6">                          
                                     <label for="firstName">Prénom :</label>
-                                    <input id="firstName" type="text" placeholder="Prénom" class="border-dark form-control" required>
+                                    <input id="firstName" type="text" placeholder="Prénom" class="border-dark form-control" required pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$">
                                 </div>
                                 <!--Nom-->
                                 <div class="form-group col-md-6"> 
                                     <label for="lastName">Nom :</label> 
-                                    <input id="Name" type="text" placeholder="Nom" class="border-dark form-control" required >  
+                                    <input id="Name" type="text" placeholder="Nom" class="border-dark form-control" required pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$">  
                                 </div>
                             </div>
                         
@@ -62,14 +62,14 @@
                             <!--Adresse-->
                             <div class="form-group mt-4">
                                 <label for="inputAddress">Adresse :</label>
-                                <input id="address" type="text" class="form-control border-dark" placeholder="1234 Main St" required>
+                                <input id="address" type="text" class="form-control border-dark" placeholder="1234 Main St" required pattern="((^[0-9]*).?((BIS)|(TER)|(QUATER))?)?((\W+)|(^))(([a-z]+.)*)">
                             </div>
                             
 
                             <!--Ville-->
                             <div class="form-group mt-4"> 
                                 <label for="ville">Ville :</label> 
-                                <input id="ville" type="text" placeholder="Ville" class="border-dark form-control" required>
+                                <input id="ville" type="text" placeholder="Ville" class="border-dark form-control" required pattern="^\p{L}+(?:[\s\-]\p{L}+)*">
                             </div>
                             
 

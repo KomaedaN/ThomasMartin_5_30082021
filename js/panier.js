@@ -62,7 +62,7 @@ btnReset.addEventListener("click", () => {
 });
 
 //envoyer les informations de l'utilisateur 
-function CheckFormThenSend(){
+async function CheckFormThenSend(){
     let idProd = saveProduitLocal.map(x => x.idProduit);
     const form = document.querySelector("#form-to-check");
     const submit = document.querySelector("#submit-btn");
@@ -96,22 +96,23 @@ function CheckFormThenSend(){
             method: "POST",
             headers: {'Content-Type': 'application/json; charset=utf-8'},
             body: JSON.stringify(order),
-        };
-
-        
-        fetch("http://localhost:3000/api/teddies/order", sendJson)//envoyer les données pour la page "commande" 
-            .then((reponse) =>  reponse.json())//envoyer en .json
-            .then((data) => {
-                localStorage.clear();//On reset le local storage avant de créer nos nouvelles "key"
-                const total = document.querySelector("#prixTotal");
-                //création des key "orderID" et "prixTotal"
-                localStorage.setItem("orderID", data.orderId);
-                localStorage.setItem("prixTotal", totalPrice);
-            })
-            .catch((err) =>//Renvoi une erreur si les promesses sont rejetées
-            {
-                alert(err);
-            })
         }
+        
+    
+        
+            fetch("http://localhost:3000/api/teddies/order", sendJson)//envoyer les données pour la page "commande" 
+                .then((reponse) =>  reponse.json())//envoyer en .json
+                .then((data) => {
+                    localStorage.clear();//On reset le local storage avant de créer nos nouvelles "key"
+                    const total = document.querySelector("#prixTotal");
+                        //création des key "orderID" et "prixTotal"
+                    localStorage.setItem("orderID", data.orderId);
+                    localStorage.setItem("prixTotal", totalPrice);
+                })
+                .catch((err) =>//Renvoi une erreur si les promesses sont rejetées
+                {
+                    alert(err);
+                })
+            }        
     }
 
