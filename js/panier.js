@@ -64,8 +64,6 @@ btnReset.addEventListener("click", () => {
 //envoyer les informations de l'utilisateur 
 async function CheckFormThenSend(){
     let idProd = saveProduitLocal.map(x => x.idProduit);
-    const form = document.querySelector("#form-to-check");
-    const submit = document.querySelector("#submit-btn");
     let inputName = document.querySelector("#firstName");
     let inputLastName = document.querySelector("#Name");
     let inputCity = document.querySelector("#ville");
@@ -115,4 +113,3 @@ async function CheckFormThenSend(){
                 })
             }        
     }
-
