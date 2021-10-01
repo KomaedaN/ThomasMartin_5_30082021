@@ -26,31 +26,28 @@
                         </a>
                         
                         <a href="./panier.html" class="navbar-brand">
-                            
-                                <p class="ms-2 text-warning mb-0">panier</p>
-                            </div>
+                            <p class="ms-2 text-warning mb-0">panier</p>
                         </a>
                     </nav>            
                 </div>
             </div>
         </div>
     </header>
-
+    <!--Id du Template-->
     <div id="listProduit" class="container"></div>
     
     <div class="row">
         <div class="col  bg-secondary pt-3 ours__padding0">
-        <ul class="list-inline text-center">
-            <li class="list-inline-item"><a href="#">Contact</a></li>
-            <li class="list-inline-item">&middot;</li>
-            <li class="list-inline-item"><a href="#">Mentions Légales</a></li>
-            <li class="list-inline-item">&middot;</li>
-            <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
-        </ul>
+            <ul class="list-inline text-center">
+                <li class="list-inline-item"><a href="#">Contact</a></li>
+                <li class="list-inline-item">&middot;</li>
+                <li class="list-inline-item"><a href="#">Mentions Légales</a></li>
+                <li class="list-inline-item">&middot;</li>
+                <li class="list-inline-item"><a href="#">Conditions d'utilisations</a></li>
+            </ul>
         </div>
-
     </div>
-
+    <!--Template-->
     <template id="oursCard" class="row mb-3">
         <p id="oursId" class="invisible"></p>
         <div class="ours__remove mt-3 mb-5 row">
@@ -60,21 +57,18 @@
 
             <div class="col-12 col-lg-7 border bg-primary text-dark shadow ours__borderR ours__flex">
                 <div class="block-ours container pt-4 pb-4">
-                    <h2 id="nameProduitOurs" class="h2 text-danger"></h2>
-                    <p id="priceProduitOurs" class="h2 mt-1 text-danger"></p>
-                    
-                        <h3 class="h5 text-warning">Couleur : </h3>
-                        <template id="colorsSelector" class="row col-1 mb-3 ms-1 flex-nowrap">
+                    <h2 id="nameProduitOurs" class="h2 text-danger"></h2><!--NameId-->
+                    <p id="priceProduitOurs" class="h2 mt-1 text-danger"></p><!--PriceId-->                    
+                    <h3 class="h5 text-warning">Couleur : </h3>
+                        <template id="colorsSelector" class="row col-1 mb-3 ms-1 flex-nowrap"><!--Colors-->
                             <div class="me-4 border border-warning rounded-3 color">
                                 <p class="mb-0 opacity-0">o</p>
                             </div>
-                        </template>
-                    
+                        </template>                    
                     <button id="btn-envoyer" type="submit" name="btn-envoyer" class="btn btn-secondary btn-lg">J'achète</button>
                     <h3 class="mt-5 h5 text-warning">Description</h3>
-                    <p id="descriptionProduitOurs" class="mt-1 me-lg-6 text-warning" ></p>
-                    <i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star-half-alt    ours__star"></i>
-                    
+                    <p id="descriptionProduitOurs" class="mt-1 me-lg-6 text-warning"></p>
+                    <i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star    ours__star"></i><i class="fas fa-star-half-alt    ours__star"></i>                    
                 </div>
             </div> 
         </div>
