@@ -18,7 +18,7 @@ function afficherOurs(produit) {
     document.getElementById("listProduit").appendChild(template)
 }
 //fonction pour récupérer les informations des produits
-function getListOurs () {
+async function getListOurs() {
     return fetch("http://localhost:3000/api/teddies") //chercher les informations sur l'API
         .then((httpBodyResponse) => httpBodyResponse.json())//récupérer en .json 
         .then((produits) => {//data
